@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
+import 'assets/tailwind'
 
 const App = () => {
   return (

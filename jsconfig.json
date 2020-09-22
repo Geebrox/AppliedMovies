@@ -9,5 +9,12 @@
       "pages/*": ["./src/services/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "build"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "cypress",
+    ".nyc_output",
+    "coverage"
+  ]
 }

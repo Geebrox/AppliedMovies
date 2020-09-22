@@ -23,8 +23,7 @@ const rules = [
       {
         loader: 'css-loader',
         options: {
-          sourceMap: true,
-          localsConvention: 'camelCase'
+          sourceMap: true
         }
       },
       'postcss-loader',
@@ -44,7 +43,6 @@ const rules = [
         loader: 'css-loader',
         options: {
           sourceMap: false,
-          localsConvention: 'camelCase',
           modules: {
             localIdentName: '[local]_[hash:base64:5]'
           }
