@@ -1,0 +1,22 @@
+{
+  "name": "appliedmovies",
+  "version": "0.1.0",
+  "main": "src/index.jsx",
+  "repository": "git@github.com:Geebrox/AppliedMovies.git",
+  "author": "bek <geebrox@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-object-to-json-parse": "^0.2.1"
+  }
+}
