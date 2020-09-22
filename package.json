@@ -6,17 +6,80 @@
   "author": "bek <geebrox@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack",
+    "cy:cache": "cypress cache path && cypress cache list && cypress verify",
+    "cy:dev": "cross-env NODE_ENV=test webpack-dev-server",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:report": "nyc report --reporter=text --reporter=text-summary",
+    "cy:ci": "concurrently -k \"yarn cy:dev\" \"yarn cy:run\" -s first",
+    "lint:es": "eslint ./src/**/*.jsx",
+    "lint:fix:es": "eslint --fix ./src/**/*.jsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "yarn lint:fix:es",
+      "git add"
+    ]
+  },
   "dependencies": {
     "core-js": "^3.6.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet-async": "^1.0.7",
+    "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@cypress/code-coverage": "^3.8.1",
+    "autoprefixer": "^10.0.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
-    "babel-plugin-object-to-json-parse": "^0.2.1"
+    "babel-plugin-object-to-json-parse": "^0.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.3.0",
+    "cssnano": "^4.1.10",
+    "cypress": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.9.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-react": "^7.20.6",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "lint-staged": "^10.4.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "^4.14.1",
+    "nyc": "^15.1.0",
+    "postcss-loader": "^4.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-scss": "^3.0.0",
+    "sass-loader": "^10.0.2",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "style-loader": "^1.2.1",
+    "tailwindcss": "^1.8.10",
+    "terser-webpack-plugin": "^4.2.2",
+    "tinify-loader": "^1.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   }
 }

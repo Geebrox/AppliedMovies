@@ -32,9 +32,9 @@ cypress/screenshots/
 coverage/
 .nyc/
 .nyc_output/
-/tests/e2e/videos/
-/tests/e2e/screenshots/
-/tests/unit/coverage/
+tests/e2e/videos/
+tests/e2e/screenshots/
+tests/unit/coverage/
 
 # Bower dependency directory (https://bower.io/)
 bower_components
