@@ -9,8 +9,17 @@ const isTestingMode = process.env.NODE_ENV === 'test'
 
 const resolveEnvKeys = () => {
   if (process.env.NETLIFY) {
-    console.log('Skipping dotenv configuration as webpack ran from netlify...')
-    return {}
+    console.log('Webpack is ran from netlify server. Generating .env file')
+    console.log({ baseURL: process.env.TMDB_API })
+
+    const dotEnvContent =
+      `TMDB_API=${process.env.TMDB_API}` +
+      `\nTMDB_API_KEY=${process.env.TMDB_API_KEY}` +
+      `\nTMDB_IMAGES_PATH=${process.env.TMDB_IMAGES_PATH}` +
+      `\nTINIFY_API_KEY=${process.env.TINIFY_API_KEY}`
+
+    const fs = require('fs')
+    fs.writeFileSync(`${PATHS.ROOT_PATH}/.env`, dotEnvContent)
   }
 
   const envConfig = dotenv.config({
