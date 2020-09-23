@@ -26,7 +26,8 @@ const resolve = {
     utils: PATHS.UTILS_PATH,
     services: PATHS.SERVICES_PATH,
     componetns: PATHS.COMPONENTS_PATH,
-    pages: PATHS.PAGES_PATH
+    pages: PATHS.PAGES_PATH,
+    contexts: PATHS.CONTEXTS_PATH
   },
   modules: ['src', 'node_modules'],
   extensions: ['.js', '.jsx', '.json', '.scss', '.css', '*']

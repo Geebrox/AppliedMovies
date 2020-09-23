@@ -6,7 +6,8 @@
       "utils/*": ["./src/utils/*"],
       "services/*": ["./src/services/*"],
       "components/*": ["./src/services/*"],
-      "pages/*": ["./src/services/*"]
+      "pages/*": ["./src/services/*"],
+      "contexts/*": ["./src/contexts/*"]
     }
   },
   "exclude": [

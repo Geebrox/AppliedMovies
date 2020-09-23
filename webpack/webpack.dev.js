@@ -33,7 +33,7 @@ const rules = [
       {
         loader: 'css-loader',
         options: {
-          sourceMap: false,
+          sourceMap: true,
           modules: {
             localIdentName: '[local]_[hash:base64:5]'
           }

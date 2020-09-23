@@ -12,6 +12,7 @@ module.exports = {
   SERVICES_PATH: resolve(ROOT_PATH, 'src/services'),
   COMPONENTS_PATH: resolve(ROOT_PATH, 'src/components'),
   PAGES_PATH: resolve(ROOT_PATH, 'src/pages'),
+  CONTEXTS_PATH: resolve(ROOT_PATH, 'src/contexts'),
   OUTPUT_PATH: resolve(ROOT_PATH, 'dist'),
   IMAGES_FOLDER: 'img',
   FONTS_FOLDER: 'fonts',

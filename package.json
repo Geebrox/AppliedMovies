@@ -6,6 +6,29 @@
   "author": "bek <geebrox@gmail.com>",
   "license": "MIT",
   "private": false,
+  "fonts": [
+    {
+      "name": "Inter",
+      "variants": [
+        400,
+        600,
+        700
+      ]
+    },
+    {
+      "name": "Playfair Display",
+      "variants": [
+        400,
+        700
+      ]
+    },
+    {
+      "name": "Roboto",
+      "variants": [
+        400
+      ]
+    }
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
@@ -32,11 +55,14 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.7",
     "react-router-dom": "^5.2.0",
+    "react-swipeable": "^5.5.1",
+    "react-transition-group": "^4.4.1",
     "regenerator-runtime": "^0.13.7",
     "tailwindcss": "^1.8.10"
   },
