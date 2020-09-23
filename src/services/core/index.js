@@ -2,9 +2,6 @@ import axios from 'axios'
 
 import NProgress from 'nprogress'
 
-console.log('Checking netlify vars')
-console.log({ baseURL: process.env.TMDB_API })
-
 export const tmdbAPI = axios.create({
   baseURL: process.env.TMDB_API,
   headers: {

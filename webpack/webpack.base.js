@@ -5,12 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const isProductionMode = process.env.NODE_ENV === 'production'
-const isTestingMode = process.env.NODE_ENV === 'test'
+const isTestingMode = process.env.NODE_ENV === 'test' || process.env.NETLIFY
 
 const resolveEnvKeys = () => {
   if (process.env.NETLIFY) {
-    console.log('Webpack is ran from netlify server. Generating .env file')
-    console.log({ baseURL: process.env.TMDB_API })
+    console.log('Webpack is ran from netlify server. Generating .env file...')
 
     const dotEnvContent =
       `TMDB_API=${process.env.TMDB_API}` +
