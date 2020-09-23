@@ -8,6 +8,11 @@ const isProductionMode = process.env.NODE_ENV === 'production'
 const isTestingMode = process.env.NODE_ENV === 'test'
 
 const resolveEnvKeys = () => {
+  if (process.env.NETLIFY) {
+    console.log('Skipping dotenv configuration as webpack ran from netlify...')
+    return {}
+  }
+
   const envConfig = dotenv.config({
     path: PATHS.DOTENV_PATH
   }).parsed

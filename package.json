@@ -32,6 +32,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
+    "build:netlify": "cross-env NODE_ENV=production NETLIFY=true webpack",
     "cy:cache": "cypress cache path && cypress cache list && cypress verify",
     "cy:dev": "cross-env NODE_ENV=test webpack-dev-server",
     "cy:open": "cypress open",
