@@ -64,19 +64,17 @@ export const MovieList = ({
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-16 px-16">
       {movieList.map(
         ({ title, release_date, vote_average, poster_path, id }, idx) => (
-          <Transition
-            key={id}
-            show
-            appear
-            enter="transition ease duration-500 transform"
-            enterFrom="opacity-0 scale-50"
-            enterTo="opacity-100 scale-100"
-            leave="transition ease-in duration-350 transform"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-50"
-          >
-            <Link to={`/movie/${id}`}>
-              {' '}
+          <Link key={id} to={`/movie/${id}`}>
+            <Transition
+              show
+              appear
+              enter="transition ease duration-500 transform"
+              enterFrom="opacity-0 scale-50"
+              enterTo="opacity-100 scale-100"
+              leave="transition ease-in duration-350 transform"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-50"
+            >
               <div
                 style={{
                   transitionDelay: `${150 * (idx - prevItemsCount)}ms`
@@ -115,8 +113,8 @@ export const MovieList = ({
                   </div>
                 </div>
               </div>
-            </Link>
-          </Transition>
+            </Transition>
+          </Link>
         )
       )}
       {isLoading && renderMovieSkeleton()}
